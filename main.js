@@ -1,12 +1,15 @@
 let counter = 1;
 
-function openModalWindow() {
-  document.getElementById('target').innerHTML += `
-    <div id="${counter}" class="modalWindows">
-      <p> Modal window ${counter} </p>
-      <button onclick="closeModalWindow(${counter})">&times</button>
-    </div>
-  `;
+document.getElementById('button').onclick = function() {
+  createModalWindow();
+};
+
+function createModalWindow() {
+  let div = document.createElement('div');
+  div.className = 'modalWindows';
+  div.id = counter;
+  div.innerHTML = `<p> Modal window ${counter} </p> <button onclick="closeModalWindow(${counter})">&times</button>`;
+  document.body.appendChild(div);
   counter++;
 }
 
