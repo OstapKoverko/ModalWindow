@@ -14,5 +14,8 @@ function createModalWindow() {
 }
 
 function closeModalWindow(windowId) {
-  document.getElementById(windowId).remove();
+  document.getElementById(windowId).classList.add('disappearance');
+  setTimeout(function() {
+    document.getElementById(windowId).remove();
+  }, 700);
 }
