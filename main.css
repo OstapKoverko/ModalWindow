@@ -10,7 +10,34 @@
   border-radius: 40px 20px;
   padding: 10px;
   display: inline-flex;
-  transition: all 2s ease-in;
+  position: relative;
+  animation-name: appearance;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.disappearance {
+  animation-name: disappearance;
+}
+
+@keyframes appearance {
+  from {
+    top: -1000px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+@keyframes disappearance {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -1000px;
+  }
 }
 
 .modalWindows button {
